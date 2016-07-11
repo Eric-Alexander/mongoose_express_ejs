@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Band List Page</title>
+	<script type="text/javascript">
+	</script>
+</head>
+<body>
+	<h1>List of Bands</h1>
+		<form action='/bands/add'>
+			<button>Add A Band!</button>
+		</form>
+	
+		<% for(x in bands) { %>
+		<form action='/bands/<%= bands[x]._id %>'>
+		<h2><%= bands[x].b_name%></h2>
+		<h4>Genre: <%= bands[x].b_genre %></h4>
+		<h4>Origin: <%= bands[x].b_origin %></h4>
+		<h4>Label: <%= bands[x].b_label %></h4>
+		<h5>Description: <%= bands[x].b_description %></h5>
+		<button>Edit</button>
+	</form>
+
+	<% } %>
+
+</body>
+</html>

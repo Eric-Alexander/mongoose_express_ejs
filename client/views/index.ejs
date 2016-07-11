@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+	</script>
+</head>
+<body>
+	<h1>Add a Band:</h1>
+	<% if(typeof(errors) != 'undefined' ) { %>
+     	<% for (var x in errors) { %>
+      		<h3><%= errors[x].message %></h3>
+     	<% } %>
+ 	<% } %>
+
+	<form action ='/bands/new' method='post'>
+		<label>Band Name: <input type='text' name='b_name'></label><br>
+		<label>Genre: <input type = 'text' name='b_genre'></label><br>
+		<label>Country of Origin: <input type = 'text' name='b_origin'></label><br>
+		<label>Current Label: <input type='text' name='b_label'></label><br>
+		<label>Description: <input type = 'textarea' name='b_description'></label><br>
+		<button>Add Band!</button>
+	</form><br>
+	<form action='/bands'>
+		<button>Go to My Favorite Bands!</button>
+	</form>
+
+</body>
+</html>

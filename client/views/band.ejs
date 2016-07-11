@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Band Edit</title>
+	<script type="text/javascript">
+	</script>
+</head>
+<body>
+	<h1>Edit this Band:</h1>
+
+	<form action ='/bands/<%= band._id %>/edit' method='post'>
+		<h2><%= band.b_name%></h2>
+		<label>Edit Name: <input type='text' name='b_name'></label><br>
+		<h4>Genre: <%= band.b_genre %></h4>
+		<label>Change Genre: <input type = 'text' name='b_genre'></label><br>
+		<h4>Origin: <%= band.b_origin %></h4>
+		<label>Change Origin: <input type = 'text' name='b_origin'></label><br>
+		<h4>Label: <%= band.b_label %></h4>
+		<label>Change Label: <input type='text' name='b_label'></label><br>
+		<h5>Description: <%= band.b_description %></h5>
+		<label>Modify Description: <input type = 'textarea' name='b_description'></label><br>
+		<br><button>Update Band!</button>
+	</form><br>
+	<form action='/bands/<%= band._id %>/destroy' method='post'>
+		<button>Delete Band</button>
+	</form>
+	<form action='/bands'>
+		<button>Go Back</button>
+	</form>
+</body>
+</html>
